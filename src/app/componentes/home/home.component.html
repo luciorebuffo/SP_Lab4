@@ -1,0 +1,9 @@
+<label>Nombre: </label><br>
+<input type="text" name="nombreUsuario" class="nombreUsuario" [(ngModel)]="nombreUsuario"><br><br>
+<label>Mensaje: </label><br>
+<input type="text" name="mensajeUsuario" class="mensajeUsuario" [(ngModel)]="mensajeUsuario">
+<button (click)=agregarTest($event)>Enviar</button><br><br>
+<div *ngFor = "let mensaje of Mensajes">
+    <span>{{mensaje.nombre}}  {{mensaje.mensaje}}</span>
+
+</div>
