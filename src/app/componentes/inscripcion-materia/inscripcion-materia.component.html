@@ -1,0 +1,24 @@
+<form class="form1">
+
+    <label class="label1" >Menu Inscripcion Materias-Admin</label><br><br>
+
+    <label class="label1" >Materias:</label><br>
+    <div *ngFor = "let materia of Materias">
+        <span>{{materia.nombre}} </span><button  (click)="agregarMateria(materia.id,materia.nombre,materia.cuatrimestre,materia.cupo,materia.profesor)">Seleccionar</button>
+    </div>
+    <br><br><br>
+
+    <label class="label1" >Alumnos:</label><br>
+    <div *ngFor = "let alumno of Alumnos">
+        <span>{{alumno.email}} </span><button  (click)="agregarAlumno(alumno.email)">Seleccionar</button>
+    </div>
+    <br><br>
+    
+    <label class="label2" >Materia Seleccionada: {{materiaNombre}}</label><br><br>
+    <label class="label2" >Alumno Seleccionado: {{alumno}}</label><br><br>
+
+
+    <button class="cargarMateria"  (click)="cargarAlumnoAMateria($event)">Cargar</button>
+
+    
+</form>

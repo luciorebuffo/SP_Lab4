@@ -1,0 +1,25 @@
+<form class="form1">
+
+    <label class="label1" >Menu Alta Materias-Admin</label><br><br>
+
+    <label class="label2" >Nombre</label><br>
+    <input type="text" name="nombre" class="txtNombre" [(ngModel)]="nombre"><br><br>
+
+    <label class="label2" >Cuatrimestre</label><br>
+    <input type="text" name="cuatrimestre" class="txtCuatrimestre" [(ngModel)]="cuatrimestre"><br><br>
+
+    <label class="label2" >Cupo</label><br>
+    <input type="text" name="cupo" class="txtCupo" [(ngModel)]="cupo"><br><br>
+
+    <div *ngFor = "let profesor of Profesores">
+        <span>{{profesor.email}} </span><button  (click)="agregarProfesor(profesor.email)">Seleccionar</button>
+    </div>
+    <br><br>
+    
+    <label class="label2" >Profesor Seleccionado: {{profesor}}</label><br><br><br>
+
+    <button class="cargarMateria"  (click)="cargarMateria($event)">Cargar</button>
+
+    
+</form>
+

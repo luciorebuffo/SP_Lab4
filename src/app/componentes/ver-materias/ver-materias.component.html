@@ -1,0 +1,21 @@
+<form class="form1">
+
+    <label class="label1" >Menu Ver Materias-Admin</label><br><br>
+
+    <label class="label1" >Materias:</label><br>
+    <div *ngFor = "let materia of Materias">
+        <span>{{materia.nombre}} </span><button  (click)="buscar(materia.id)">Seleccionar</button>
+    </div>
+    <br><br><br>
+
+    <label class="label1" >Alumnos:</label><br>
+    
+    <div  *ngFor = "let alumno of Alumnos | async" >
+        <span>{{alumno.email}} </span>
+    </div>
+    <br><br>
+    
+      
+
+    
+</form>

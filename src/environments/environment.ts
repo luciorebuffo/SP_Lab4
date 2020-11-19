@@ -6,14 +6,14 @@ export const environment = {
   production: false,
   firebase:{
     
-    apiKey: "AIzaSyD2bPZ1yRskB1t-GG86IOwmyTt7PUkWYd4",
-    authDomain: "chat-99cc8.firebaseapp.com",
-    databaseURL: "https://chat-99cc8.firebaseio.com",
-    projectId: "chat-99cc8",
-    storageBucket: "chat-99cc8.appspot.com",
-    messagingSenderId: "227858109243",
-    appId: "1:227858109243:web:4c24da97be2d7bbf7b1d1e",
-    measurementId: "G-HSS0K2WN9F"
+    apiKey: "AIzaSyB_q-eLYuD6KVojQR6Z-4ltjMEybdWt0ZA",
+    authDomain: "segundoparcial-99661.firebaseapp.com",
+    databaseURL: "https://segundoparcial-99661.firebaseio.com",
+    projectId: "segundoparcial-99661",
+    storageBucket: "segundoparcial-99661.appspot.com",
+    messagingSenderId: "815053043124",
+    appId: "1:815053043124:web:246e6a25477a613a2e2ee1",
+    measurementId: "G-HP7TN57H21"
     
   }
 };

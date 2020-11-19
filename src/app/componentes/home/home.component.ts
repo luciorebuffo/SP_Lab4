@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore,AngularFirestoreDocument,DocumentData } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,50 +9,40 @@ import { AngularFirestore,AngularFirestoreDocument,DocumentData } from '@angular
 })
 export class HomeComponent implements OnInit {
 
-  contador = 0;
+  usuario;
+  email;
+  
 
-  nombreUsuario:string;
-  mensajeUsuario:string;
-  Mensajes= [];
-
-  constructor(private afs : AngularFirestore) {
+  constructor(private router: Router) {
     
    }
 
   ngOnInit(): void {
 
-    const doc =  this.afs.collection('chatLab4').doc('Chat').collection('Mensajes');
-    /*const mensaje = { nombre: "Lucio", mensaje: "Hola"};
-    this.afs.collection('chatLab4').doc().set(mensaje);*/
+    this.usuario = JSON.parse(localStorage.getItem('usuario'));
+    this.email = this.usuario.email;
+    
+    if(this.usuario.tipo == "admin")
+    {
+      this.router.navigateByUrl("Admin");
+    }
 
-    doc
-    .valueChanges()
-    .subscribe(data =>{
-      this.Mensajes = data;
-    })
+    if(this.usuario.tipo == "Alumno")
+    {
+      this.router.navigateByUrl("Alumno");
+    }
+
+    if(this.usuario.tipo == "Profesor")
+    {
+      this.router.navigateByUrl("Profesor");
+    }
+
+    
      
   }
 
 
-  agregarTest(e){
-    
-    const mensaje = { nombre: this.nombreUsuario, mensaje: this.mensajeUsuario};
-    //this.afs.collection('chatLab4').doc(this.contador.toString()).set(mensaje);
-
-    try {
-
-      const insert =  this.afs.collection('chatLab4').doc('Chat').collection('Mensajes').add(mensaje);
-
-      console.log(insert);
-
-    } catch (error) {
-
-      console.log(error);
-
-    }
-    
-    
-  }
+  
 
   
 
